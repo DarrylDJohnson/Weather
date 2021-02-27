@@ -38,7 +38,7 @@ This is a normal flutter app. You should follow the instructions in the [officia
 
 ## Bugs and feature requests
 
-Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/DarrylDJohnson/Weather/issues) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/DarrylDJohnson/Weather/issues/new).
+Have a bug or a feature request? Please first review the [issue page](https://github.com/DarrylDJohnson/Weather/issues) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/DarrylDJohnson/Weather/issues/new).
 
 ## Creators
 
