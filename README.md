@@ -26,15 +26,15 @@ This is a normal flutter app. You should follow the instructions in the [officia
 
 ### OpenWeatherMap
 
-One Call & Historical Weather APIs are used to query future and historical weather.
+[One Call](https://openweathermap.org/api/one-call-api) & [Historical Weather](https://openweathermap.org/history) APIs are used to query future and historical weather.
 
 ### Google Places
 
-Google Places API is used to query locations within the United States to obtain geographic coordinates to be used to query the OpenWeatherMap API.
+[Google Places](https://developers.google.com/maps/documentation/places/web-service/overview) API is used to query locations within the United States to obtain geographic coordinates to be used to query the OpenWeatherMap API.
 
 ### Geolocator
 
-Geolocator is used to determine the current location of the device to be used to query the OpenWeatherMap API.
+[Geolocator](https://pub.dev/packages/geolocator) is used to determine the current location of the device to be used to query the OpenWeatherMap API.
 
 ## Bugs and feature requests
 
