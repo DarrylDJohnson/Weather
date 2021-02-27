@@ -1,16 +1,50 @@
-# weather_app
+# Dabble Weather
 
-A new Flutter application.
+Weather application with Flutter that uses OpenWeatherMap and Google Places API to display Weather Forecast information.
 
-## Getting Started
+## Table of contents
 
-This project is a starting point for a Flutter application.
+- [Quick start](#quick-start)
+- [What's included](#whats-included)
+- [Bugs and feature requests](#bugs-and-feature-requests)
+- [Creators](#creators)
+- [Thanks](#thanks)
 
-A few resources to get you started if this is your first Flutter project:
+## Quick start
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+This is a normal flutter app. You should follow the instructions in the [official documentation](https://flutter.io/docs/get-started/install).
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## What's included
+
+* Search bar, to search weather by location
+* Flutter BLoC Pattern
+* HTTP Services
+* Google Places API
+* OpenWeatherMap API, One Call & Historical Weather APIs
+* Geolocator
+* Custom Icon Package
+
+### OpenWeatherMap
+
+One Call & Historical Weather APIs are used to query future and historical weather.
+
+### Google Places
+
+Google Places API is used to query locations within the United States to obtain geographic coordinates to be used to query the OpenWeatherMap API.
+
+### Geolocator
+
+Geolocator is used to determine the current location of the device to be used to query the OpenWeatherMap API.
+
+## Bugs and feature requests
+
+Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/DarrylDJohnson/Weather/issues) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/DarrylDJohnson/Weather/issues/new).
+
+## Creators
+
+**Darryl Johnson**
+
+- <https://github.com/DarrylDJohnson>
+
+## Thanks
+Thanks to all contributors and their support
