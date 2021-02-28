@@ -72,11 +72,13 @@ class LocationService {
     List<Placemark> results = await GeocodingPlatform.instance
         .placemarkFromCoordinates(position.latitude, position.longitude);
 
+    print("${results[0].locality} ${results[0].administrativeArea}  ${results[0].subAdministrativeArea}");
+
     return Place(
       name: results[0].locality,
       lat: position.latitude,
       lng: position.longitude,
-      description: results[0].postalCode,
+      description: "${results[0].locality}",
     );
   }
 }
