@@ -19,7 +19,6 @@ class SplashCubit extends Cubit<SplashState> {
       places != null && places.isNotEmpty
           ? emit(SplashStateWeather(places.last))
           : emit(SplashStateLocation());
-
     } catch (error) {
       emit(SplashStateError(error));
     }

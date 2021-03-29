@@ -6,7 +6,6 @@ import 'package:weather_app/screens/loading/loading_screen.dart';
 import 'package:weather_app/screens/location/location_screen.dart';
 
 class LocationProvider extends StatefulWidget {
-
   @override
   _LocationProviderState createState() => _LocationProviderState();
 }
@@ -32,7 +31,7 @@ class _LocationProviderState extends State<LocationProvider> {
             listener: (context, state) {
               if (state is LocationStateError) {
                 SnackBar snackBar = SnackBar(content: Text("${state.error}"));
-                Scaffold.of(context).showSnackBar(snackBar);
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
               } else if (state is LocationEvent) {
                 Navigator.popAndPushNamed(
                   context,
@@ -48,7 +47,7 @@ class _LocationProviderState extends State<LocationProvider> {
                 return LocationScreen();
               }
 
-              throw(){};
+              throw () {};
             },
             buildWhen: (previous, current) =>
                 current is LocationStateMain || current is LocationStateLoading,

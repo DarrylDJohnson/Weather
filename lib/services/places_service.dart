@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:weather_app/models/place.dart';
 import 'package:weather_app/models/suggestion.dart';
-import 'keys.dart';
 
 import 'http_service.dart';
+import 'keys.dart';
 
 class PlacesService {
   final String sessionToken;
@@ -12,10 +12,13 @@ class PlacesService {
   PlacesService(this.sessionToken);
 
   Future<List<Suggestion>> getSuggestions(String input, String language) async {
+
     final request =
-        'https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$input&types=(cities)&language=$language&key=$PLACES_API_KEY&sessionToken=$sessionToken';
+        "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$input&types=(cities)&language=$language&key=$GOOGLE_API_KEY&sessiontoken=$sessionToken";
 
     final result = await httpRequest(request);
+
+    print(result.toString());
 
     switch (result['status']) {
       case 'OK':
@@ -37,7 +40,7 @@ class PlacesService {
 
   Future<Place> locationFromId(String id) async {
     final request =
-        'https://maps.googleapis.com/maps/api/place/details/json?place_id=$id&fields=name,formatted_address,geometry/location&key=$PLACES_API_KEY&sessiontoken=$sessionToken';
+        "https://maps.googleapis.com/maps/api/place/details/json?place_id=$id&fields=name,formatted_address,geometry/location&key=$GOOGLE_API_KEY";
 
     final result = await httpRequest(request);
 
@@ -45,11 +48,10 @@ class PlacesService {
 
     if (result['status'] == 'OK')
       return Place(
-        name: result['result']['name'],
-        lat: result['result']['geometry']['location']['lat'],
-        lng: result['result']['geometry']['location']['lng'],
-        description: result['result']['formatted_address']
-      );
+          name: result['result']['name'],
+          lat: result['result']['geometry']['location']['lat'],
+          lng: result['result']['geometry']['location']['lng'],
+          description: result['result']['formatted_address']);
     else
       return Future.error(result['status']);
   }

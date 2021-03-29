@@ -1,4 +1,5 @@
 import 'package:weather_app/models/temperature.dart';
+
 extension TemperatureConversion on Temperature {
   Temperature toKelvin() {
     double _min;
@@ -63,7 +64,6 @@ extension TemperatureConversion on Temperature {
     else
       return null;
   }
-
 
   double maxDifference(Temperature temperature) {
     if (this.max != null && temperature.max != null)

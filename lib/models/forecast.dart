@@ -17,6 +17,5 @@ class Forecast {
       this.hourly = const []});
 
   @override
-  String toString() =>
-      "Forecast {current: $current ($lat, $lng)";
+  String toString() => "Forecast {current: $current ($lat, $lng)";
 }

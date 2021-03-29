@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/models/place.dart';
 import 'package:weather_app/services/location_service.dart';
-import 'package:weather_app/services/shared_pref.dart';
 
 import 'location_state.dart';
 

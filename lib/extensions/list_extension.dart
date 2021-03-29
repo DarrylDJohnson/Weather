@@ -1,5 +1,4 @@
 extension ListE<E> on List<E> {
-
   /// Compares elements of a List
   /// Returns the best fitting element
   E compare(bool compare(E element, E result)) {
@@ -43,12 +42,9 @@ extension ListExtension on List {
 
     return list;
   }
-
 }
 
-
 extension ListDynamicExtension on dynamic {
-
   /// Combines two lists with elements made unique by an identifier
   /// Returns a List
   List distinctJoin(List other, Function(dynamic) identifier) {

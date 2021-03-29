@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:uuid/uuid.dart';
 import 'package:weather_app/models/place.dart';
-import 'file:///C:/Users/Darry/AndroidStudioProjects/weather_app/lib/screens/components/place_search_delegate.dart';
 import 'package:weather_app/router.dart';
+import 'package:weather_app/screens/components/place_search_delegate.dart';
 
 class SearchButton extends StatelessWidget {
   _search(BuildContext context) async {

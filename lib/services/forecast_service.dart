@@ -51,7 +51,7 @@ class ForecastService {
 
   Future<Map> oneCall() async {
     final request =
-        "https://api.openweathermap.org/data/2.5/onecall?lat=${place.lat}&lon=${place.lng}&exclude=minutely&appid=$WEATHER_API_KEY";
+        "https://api.openweathermap.org/data/2.5/onecall?lat=${place.lat}&lon=${place.lng}&exclude=minutely&appid=$OPENWEATHERMAP_API_KEY";
 
     Map result = await httpRequest(request);
 
@@ -62,7 +62,7 @@ class ForecastService {
     final dt = (dateTime.millisecondsSinceEpoch / 1000).round();
 
     final request =
-        "https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${place.lat}&lon=${place.lng}&dt=$dt&exclude=minutely&appid=$WEATHER_API_KEY";
+        "https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${place.lat}&lon=${place.lng}&dt=$dt&exclude=minutely&appid=$OPENWEATHERMAP_API_KEY";
 
     Map result = await httpRequest(request);
 

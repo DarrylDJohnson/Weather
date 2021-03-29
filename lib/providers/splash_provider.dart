@@ -27,8 +27,8 @@ class _SplashProviderState extends State<SplashProvider> {
           cubit: cubit,
           listener: (context, state) {
             if (state is SplashStateError) {
-              Scaffold.of(context)
-                  .showSnackBar(SnackBar(content: Text(state.error.toString())));
+              ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text(state.error.toString())));
             }
             if (state is SplashStateLocation) {
               Navigator.popAndPushNamed(context, locationRoute);

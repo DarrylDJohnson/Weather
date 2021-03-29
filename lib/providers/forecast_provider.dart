@@ -43,7 +43,7 @@ class _ForecastProviderState extends State<ForecastProvider> {
                   content: Text("Error : ${state.error}"),
                 );
 
-                Scaffold.of(context).showSnackBar(snackBar);
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
               }
             },
             builder: (context, state) {

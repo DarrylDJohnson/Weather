@@ -15,7 +15,6 @@ class MenuStateLoading extends MenuState {
 }
 
 class MenuStateMain extends MenuState {
-
   final List<Place> places;
 
   MenuStateMain(this.places) : super([places]);
@@ -30,7 +29,11 @@ class MenuStateError extends MenuState {
   MenuStateError(this.error) : super([error]);
 
   @override
-  String toString() => 'MenuState: Error $error';
+  String toString() {
+    if (error is Error) debugPrintStack(stackTrace: error.stackTrace);
+
+    return 'MenuState: Error $error';
+  }
 }
 
 class MenuEvent extends MenuState {

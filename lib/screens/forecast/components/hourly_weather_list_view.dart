@@ -12,12 +12,14 @@ class HourlyWeatherListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Temperature _max = hourly.tempMax;
-    double _range = hourly.tempRange *2;
+    double _range = hourly.tempRange * 2;
 
     return SliverToBoxAdapter(
       child: Container(
         height: 72.0 + _range,
+        alignment: Alignment.center,
         child: ListView.builder(
+          shrinkWrap: true,
           scrollDirection: Axis.horizontal,
           itemCount: hourly.length > 18 ? 18 : hourly.length,
           itemBuilder: (context, index) => Padding(

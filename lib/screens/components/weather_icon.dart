@@ -20,7 +20,6 @@ class WeatherIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return SvgPicture.asset(
       "assets/icons/$code.svg",
       height: size,

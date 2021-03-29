@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-import 'search_button.dart';
 import 'menu.dart';
+import 'search_button.dart';
 
 class Toolbar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -14,7 +13,7 @@ class Toolbar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.transparent,
       centerTitle: true,
       leading: IconButton(
-        icon: Icon(MdiIcons.menu),
+        icon: Icon(Icons.menu),
         onPressed: () => menu(context),
       ),
       title: RichText(

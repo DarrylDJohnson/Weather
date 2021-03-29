@@ -12,7 +12,7 @@ menu(BuildContext context) async {
       ),
     ),
     builder: (context) {
-      return MenuProvider();
+      return MenuProvider(scaffoldContext: context);
     },
   );
 }
@@ -44,8 +44,7 @@ class Menu extends StatelessWidget {
               if (places[index].description != null)
                 return Text("${places[index].description}");
             }(),
-            onTap: () =>
-                context.bloc<MenuCubit>().goToLocation(places[index]),
+            onTap: () => context.bloc<MenuCubit>().goToLocation(places[index]),
           ),
           itemCount: places.length,
         ),

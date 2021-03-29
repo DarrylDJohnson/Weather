@@ -13,13 +13,23 @@ class ForecastScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      slivers: [
-        Toolbar(),
-        CurrentWeatherTile(forecast),
-        HourlyWeatherListView(forecast.hourly),
-        DailyWeatherListView(forecast.daily),
-      ],
+    return Center(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxWidth: 1024,
+        ),
+        child: Material(
+          elevation: 2.0,
+          child: CustomScrollView(
+            slivers: [
+              Toolbar(),
+              CurrentWeatherTile(forecast),
+              HourlyWeatherListView(forecast.hourly),
+              DailyWeatherListView(forecast.daily),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

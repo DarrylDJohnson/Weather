@@ -1,8 +1,5 @@
-import 'package:flutter/material.dart';
-
-extension DateTimeExtension on DateTime{
-
-  bool isToday(){
+extension DateTimeExtension on DateTime {
+  bool isToday() {
     DateTime now = DateTime.now();
 
     DateTime nowAtStartOfDay = DateTime(now.year, now.month, now.day);
@@ -10,5 +7,4 @@ extension DateTimeExtension on DateTime{
 
     return thisAtStartOfDay.isAtSameMomentAs(nowAtStartOfDay);
   }
-
 }

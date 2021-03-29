@@ -34,5 +34,6 @@ class SplashStateError extends SplashState {
   SplashStateError(this.error) : super([error]);
 
   @override
-  String toString() => 'SplashState: Error $error ${(error as Error).stackTrace}';
+  String toString() =>
+      'SplashState: Error $error ${(error as Error).stackTrace}';
 }

@@ -4,6 +4,10 @@ import 'package:weather_app/router.dart';
 import 'package:weather_app/screens/components/menu.dart';
 
 class MenuProvider extends StatefulWidget {
+  final BuildContext scaffoldContext;
+
+  const MenuProvider({this.scaffoldContext});
+
   @override
   _MenuProviderState createState() => _MenuProviderState();
 }
@@ -27,7 +31,7 @@ class _MenuProviderState extends State<MenuProvider> {
         listener: (context, state) {
           if (state is MenuStateError) {
             SnackBar snackBar = SnackBar(content: Text("${state.error}"));
-            Scaffold.of(context).showSnackBar(snackBar);
+            ScaffoldMessenger.of(widget.scaffoldContext).showSnackBar(snackBar);
           } else if (state is MenuEvent) {
             Navigator.popAndPushNamed(
               context,
@@ -42,7 +46,6 @@ class _MenuProviderState extends State<MenuProvider> {
           } else if (state is MenuStateMain) {
             return Menu(state.places);
           }
-
           throw () {};
         },
         buildWhen: (previous, current) =>

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:weather_app/models/weather.dart';
@@ -9,48 +10,55 @@ class WeatherDataGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    return GridView(
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        childAspectRatio: 2.5,
+    List<Widget> data = [
+      ListTile(
+        title: Text("Description"),
+        subtitle: Text("${weather.description}"),
       ),
-      children: [
-        ListTile(
-          title: Text("Description"),
-          subtitle: Text("${weather.description}"),
-        ),
-        ListTile(
-          title: Text("Precipitation"),
-          subtitle: Text("${(weather.pop * 100).round()}%"),
-        ),
-        ListTile(
-          title: Text("Sunrise"),
-          subtitle: Text(DateFormat("h:mm a").format(weather.sunrise)),
-        ),
-        ListTile(
-          title: Text("Sunset"),
-          subtitle: Text(DateFormat("h:mm a").format(weather.sunset)),
-        ),
-        ListTile(
-          title: Text("Wind Degree"),
-          subtitle: Text("${weather.windDegree}"),
-        ),
-        ListTile(
-          title: Text("Wind Speed"),
-          subtitle: Text("${weather.windSpeed} m/s"),
-        ),
-        ListTile(
-          title: Text("Pressure"),
-          subtitle: Text("${weather.pressure}"),
-        ),
-        ListTile(
-          title: Text("Clouds"),
-          subtitle: Text("${weather.clouds}%"),
-        ),
-      ],
-    );
+      ListTile(
+        title: Text("Precipitation"),
+        subtitle: Text("${(weather.pop * 100).round()}%"),
+      ),
+      ListTile(
+        title: Text("Sunrise"),
+        subtitle: Text(DateFormat("h:mm a").format(weather.sunrise)),
+      ),
+      ListTile(
+        title: Text("Sunset"),
+        subtitle: Text(DateFormat("h:mm a").format(weather.sunset)),
+      ),
+      ListTile(
+        title: Text("Wind Degree"),
+        subtitle: Text("${weather.windDegree}"),
+      ),
+      ListTile(
+        title: Text("Wind Speed"),
+        subtitle: Text("${weather.windSpeed} m/s"),
+      ),
+      ListTile(
+        title: Text("Pressure"),
+        subtitle: Text("${weather.pressure}"),
+      ),
+      ListTile(
+        title: Text("Clouds"),
+        subtitle: Text("${weather.clouds}%"),
+      ),
+    ];
+
+    return kIsWeb
+        ? ListView(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            children: data,
+          )
+        : GridView(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio: 2.5,
+            ),
+            children: data,
+          );
   }
 }

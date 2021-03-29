@@ -11,7 +11,7 @@ class LoadingScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             WeatherIcon.code(
-              0 ,
+              0,
               size: 96.0,
             ),
             SizedBox(

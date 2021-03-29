@@ -20,7 +20,6 @@ class LocationStateLoading extends LocationState {
 }
 
 class LocationStatePlaces extends LocationState {
-
   final List<Place> places;
 
   LocationStatePlaces(this.places) : super([places]);
