@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:location/location.dart';
 import 'package:weather_app/models/place.dart';
 import 'package:weather_app/services/http_service.dart';
@@ -40,7 +41,7 @@ class LocationService {
   }
 
   Future<Place> placeFromCoordinates(num latitude, num longitude) async {
-    final request =
+    final request = (kIsWeb ? "https://corsproxy-virid.vercel.app/api?apiurl=" : "") +
         "https://maps.googleapis.com/maps/api/geocode/json?latlng=$latitude,$longitude&result_type=locality|country&sensor=true&key=$GOOGLE_API_KEY";
 
     final results = await httpRequest(request);
