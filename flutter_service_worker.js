@@ -118,9 +118,9 @@ const RESOURCES = {
 "assets/packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf": "174c02fc4609e8fc4389f5d21f16a296",
 "favicon.svg": "dd140a81d49b2129507490c4b46aaec6",
 "icons/favicon.svg": "dd140a81d49b2129507490c4b46aaec6",
-"index.html": "5eb7eab60f2e1090af1bdaa8a3476aa9",
-"/": "5eb7eab60f2e1090af1bdaa8a3476aa9",
-"main.dart.js": "1e4a3fede11556b61afc1519e6b56cf8",
+"index.html": "8e101927da1233b088fb2b339c696025",
+"/": "8e101927da1233b088fb2b339c696025",
+"main.dart.js": "9daee432857bd9d099e17df94cc0e015",
 "manifest.json": "facda670ec0b4728ef0f296b422d40c9",
 "version.json": "950ba10da9e27f4a0ad1ed8daed26d04"
 };
