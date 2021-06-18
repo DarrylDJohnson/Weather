@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:weather_app/models/place.dart';
 import 'package:weather_app/models/suggestion.dart';
 
@@ -13,7 +14,7 @@ class PlacesService {
 
   Future<List<Suggestion>> getSuggestions(String input, String language) async {
 
-    final request =
+    final request = (kIsWeb ? "https://corsproxy-virid.vercel.app/api?apiurl=" : "") +
         "https://maps.googleapis.com/maps/api/place/autocomplete/json?input=$input&types=(cities)&language=$language&key=$GOOGLE_API_KEY&sessiontoken=$sessionToken";
 
     final result = await httpRequest(request);
@@ -39,7 +40,7 @@ class PlacesService {
   }
 
   Future<Place> locationFromId(String id) async {
-    final request =
+    final request = (kIsWeb ? "https://corsproxy-virid.vercel.app/api?apiurl=" : "") +
         "https://maps.googleapis.com/maps/api/place/details/json?place_id=$id&fields=name,formatted_address,geometry/location&key=$GOOGLE_API_KEY";
 
     final result = await httpRequest(request);
